@@ -2,8 +2,9 @@ import Image from "next/image";
 import Actronom from "@/public/nav/actronom.png";
 import { Button } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
+import { FC } from "react";
 
-const Index = () => {
+const Index: FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white py-12 flex justify-center items-start">
       <div className="bg-gray-800 rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-start w-full max-w-screen-xl gap-6 md:gap-8 rounded-tl-[20px] opacity-100">

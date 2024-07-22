@@ -2,9 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/logo.png";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+import { FC } from "react";
 
-const Index = () => {
-  const links = [
+interface NavLink {
+  path: string;
+  title: string;
+}
+
+const Index: FC = () => {
+  const links: NavLink[] = [
     { path: "/", title: "Marketplace" },
     { path: "/trending-collection", title: "Rankings" },
     { path: "/top-creator", title: "Connect a Wallet" },

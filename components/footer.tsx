@@ -2,8 +2,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import AppleIcon from "@mui/icons-material/Apple";
+import { FC } from "react";
 
-const Index = () => {
+const Index: FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-8">
       <div className="container mx-auto px-6 flex flex-col md:flex-row md:justify-between">
