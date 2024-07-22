@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Art from "@/public/nav/art.png";
 import Art2 from "@/public/nav/art2.png";
 import Art3 from "@/public/nav/art3.png";
