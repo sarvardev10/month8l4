@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Discower from "@/public/nav/discover.png";
 import Discower2 from "@/public/nav/discover2.png";
 import Discower3 from "@/public/nav/discover3.png";

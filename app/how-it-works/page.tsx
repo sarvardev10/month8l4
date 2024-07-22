@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Setup from "@/public/nav/setup.png";
 import Setup2 from "@/public/nav/setup2.png";
 import Setup3 from "@/public/nav/setup3.png";

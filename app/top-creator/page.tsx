@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Artict_avatar from "@/public/nav/artict_avatar.png";
 import Artict_avatar2 from "@/public/nav/artict_avatar2.png";
 import Artict_avatar3 from "@/public/nav/artict_avatar3.png";
