@@ -6,7 +6,7 @@ import { FC } from "react";
 
 const Index: FC = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-12 flex justify-center items-start">
+    <div className="min-h-screen bg-black text-white py-12 flex justify-center items-start">
       <div className="bg-gray-800 rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-start w-full max-w-screen-xl gap-6 md:gap-8 rounded-tl-[20px] opacity-100">
         <div className="relative w-full md:w-[600px] h-[300px] md:h-[460px] overflow-hidden rounded-tl-[20px]">
           <Image

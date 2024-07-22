@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import MarketPLace from "@/app/trending-collection/page";
+// import MarketPLace from "@/app/trending-collection/page";
 import Rankings from "@/app/top-creator/page";
 import BrowseCategories from "@/app/browse-categories/page";
 import DiscoverBrowser from "@/app/discover-more/page";
@@ -30,7 +30,7 @@ export default function RootLayout({
           <Header />
           <main className="flex justify-center">{children}</main>
           <main>
-            <MarketPLace />
+            {/* <MarketPLace /> */}
           </main>
           <main>
             <Rankings />

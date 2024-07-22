@@ -5,7 +5,7 @@ import Avatar from "@/public/nav/Avatar Placeholder.png";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white pt-16">
+    <div className="min-h-screen w-full bg-black text-white pt-16">
       <nav className="px-6 py-8 md:px-12 md:py-12">
         <div className="flex flex-col md:flex-row items-center md:justify-between">
           <div className="md:w-1/2 md:ml-12">

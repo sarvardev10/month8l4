@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Art from "@/public/nav/art.png";
 import Art2 from "@/public/nav/art2.png";
@@ -8,7 +10,12 @@ import Art6 from "@/public/nav/art6.png";
 import Art7 from "@/public/nav/art7.png";
 import Art8 from "@/public/nav/art8.png";
 
-const categories = [
+interface Category {
+  title: string;
+  image: StaticImageData; // Use StaticImageData type for Next.js static image imports
+}
+
+const categories: Category[] = [
   { title: "Art", image: Art },
   { title: "Collectibles", image: Art2 },
   { title: "Music", image: Art3 },
@@ -19,25 +26,25 @@ const categories = [
   { title: "Virtual Worlds", image: Art8 },
 ];
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-12">
+    <div className="min-h-screen bg-black text-white py-12">
       <div className="container mx-auto px-6">
-        <h1 className="text-4xl font-bold mb-8">Browse Categories</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <h1 className="text-4xl font-bold mb-8 text-center animate__animated animate__fadeIn">
+          Browse Categories
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-4 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105"
+              className="bg-gray-800 p-4 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-700"
             >
               <div
-                className="relative mb-4 transform transition duration-300 hover:scale-110"
+                className="relative mb-4 transform transition-transform duration-300 hover:scale-110"
                 style={{
-                  width: "240px",
-                  height: "240px",
-                  gap: "0px",
-                  borderRadius: "20px 20px 0px 0px",
-                  opacity: "0.9",
+                  width: "220px", // Adjusted size for better responsiveness
+                  height: "220px",
+                  borderRadius: "15px 15px 0 0",
                 }}
               >
                 <Image
@@ -45,13 +52,10 @@ const Index = () => {
                   alt={category.title}
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-lg cursor-pointer"
-                  style={{
-                    borderRadius: "20px 20px 0px 0px",
-                  }}
+                  className="rounded-t-lg cursor-pointer"
                 />
               </div>
-              <h2 className="text-xl font-bold">{category.title}</h2>
+              <h2 className="text-xl font-bold text-center">{category.title}</h2>
             </div>
           ))}
         </div>

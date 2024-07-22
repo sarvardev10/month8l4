@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Artict_avatar from "@/public/nav/artict_avatar.png";
 import Artict_avatar2 from "@/public/nav/artict_avatar2.png";
@@ -8,8 +10,14 @@ import Artict_avatar6 from "@/public/nav/artict_avatar6.png";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { Button } from "@mui/material";
 
-const Index = () => {
-  const creators = [
+interface Creator {
+  name: string;
+  totalSales: string;
+  image: StaticImageData;
+}
+
+const Index: React.FC = () => {
+  const creators: Creator[] = [
     {
       name: "Keepitreal",
       totalSales: "34.53 ETH",
@@ -73,30 +81,32 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white ">
-      <main className="px-8 py-12 ">
-        <div className="flex justify-between items-center mb-8 ">
+    <div className="min-h-screen bg-black text-white">
+      <main className="px-8 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div>
-            <h1 className="text-4xl font-bold ">Top Creators</h1>
-            <p className="text-lg">
+            <h1 className="text-4xl md:text-5xl font-bold mb-2 animate__animated animate__fadeIn">
+              Top Creators
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300">
               Checkout Top Rated Creators On The NFT Marketplace
             </p>
           </div>
           <Button
             variant="outlined"
-            className="bg-gray-900 hover:bg-purple-700 border border-purple-700 text-white font-bold py-3 px-6 rounded-[18px]"
+            className="bg-gray-900 hover:bg-purple-700 border border-purple-700 text-white font-bold py-3 px-6 rounded-[18px] transition-transform duration-300 hover:scale-105"
           >
             <RocketLaunchIcon style={{ fontSize: 20, marginRight: 8 }} />
             View Rankings
           </Button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {creators.map((creator, index) => (
             <div
               key={index}
               className="bg-gray-800 p-4 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-slate-600"
             >
-              <div className="relative w-24 h-24 mb-4 ">
+              <div className="relative w-24 h-24 mb-4">
                 <Image
                   src={creator.image}
                   alt={creator.name}
@@ -105,7 +115,7 @@ const Index = () => {
                   className="rounded-full transform transition duration-300 hover:scale-110 cursor-pointer"
                 />
               </div>
-              <h2 className="text-xl font-bold">{creator.name}</h2>
+              <h2 className="text-xl font-bold mb-2">{creator.name}</h2>
               <p className="text-gray-400">Total Sales: {creator.totalSales}</p>
             </div>
           ))}

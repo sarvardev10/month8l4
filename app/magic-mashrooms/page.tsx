@@ -12,7 +12,7 @@ interface Time {
   seconds: number;
 }
 
-const Index = () => {
+const Index: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<Time>({
     hours: 59,
     minutes: 30,
@@ -23,8 +23,6 @@ const Index = () => {
     const calculateTotalSeconds = (time: Time): number => {
       return time.hours * 3600 + time.minutes * 60 + time.seconds;
     };
-
-    const totalSeconds = calculateTotalSeconds(timeLeft);
 
     const intervalId = setInterval(() => {
       setTimeLeft(prevTime => {
@@ -44,12 +42,12 @@ const Index = () => {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [timeLeft]);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-12">
+    <div className="min-h-screen bg-black text-white py-12">
       <div className="container mx-auto px-6">
-        <div className="relative w-full h-[640px] mb-4">
+        <div className="relative w-full h-[500px] md:h-[640px] mb-4">
           <div
             className="absolute inset-0 bg-gradient-to-b from-[rgba(162,89,255,0)] to-[#A259FF] rounded-lg"
             style={{ zIndex: 1 }}
@@ -58,42 +56,40 @@ const Index = () => {
           <div className="relative w-full h-full">
             <Image
               src={Mashroom}
-              alt="Magic Mashrooms"
+              alt="Magic Mushrooms"
               layout="fill"
               objectFit="cover"
-              className="rounded-lg"
+              className="rounded-lg transition-transform duration-500 transform hover:scale-105"
             />
-            <div className="absolute top-96 left-96 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
-              <h1 className="text-4xl font-bold mb-4">Magic Mashrooms</h1>
-              <Button
-                variant="contained"
-                className="flex items-center bg-purple-700 text-white font-bold py-2 px-4 rounded hover:bg-purple-800"
-              >
-                <RemoveRedEyeIcon className="mr-2" />
-                See NFT
-              </Button>
-            </div>
-          </div>
+            <div className="absolute inset-x-4 top-1/2 transform -translate-y-1/2 md:inset-x-16 lg:inset-x-32 flex flex-col md:flex-row justify-between z-10">
+              <div className="flex flex-col items-start mb-8 md:mb-0">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate__animated animate__fadeIn">
+                  Magic Mushrooms
+                </h1>
+                <Button
+                  variant="contained"
+                  className="flex items-center bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-100 transition-transform duration-300"
+                >
+                  <RemoveRedEyeIcon className="mr-2" />
+                  See NFT
+                </Button>
+              </div>
 
-          <div
-            className="absolute bottom-16 right-24 bg-black bg-opacity-50 px-3 py-1 rounded-lg"
-            style={{ zIndex: 2, width: 236, height: 101 }}
-          >
-            <div className="flex flex-col items-center absolute top-5 left-10">
-              <span className="text-xs">Auction ends in:</span>
-
-              <div className="flex">
-                <div className="flex flex-col items-center mx-1">
-                  <span className="text-lg font-bold">{timeLeft.hours}</span>
-                  <span className="text-xs">Hours</span>
-                </div>
-                <div className="flex flex-col items-center mx-1">
-                  <span className="text-lg font-bold">{timeLeft.minutes}</span>
-                  <span className="text-xs">Minutes</span>
-                </div>
-                <div className="flex flex-col items-center mx-1">
-                  <span className="text-lg font-bold">{timeLeft.seconds}</span>
-                  <span className="text-xs">Seconds</span>
+              <div className="flex flex-col items-center bg-black bg-opacity-50 px-4 py-2 rounded-lg">
+                <span className="text-xs">Auction ends in:</span>
+                <div className="flex mt-4 md:mt-6">
+                  <div className="flex flex-col items-center mx-2">
+                    <span className="text-lg font-bold">{timeLeft.hours}</span>
+                    <span className="text-xs">Hours</span>
+                  </div>
+                  <div className="flex flex-col items-center mx-2">
+                    <span className="text-lg font-bold">{timeLeft.minutes}</span>
+                    <span className="text-xs">Minutes</span>
+                  </div>
+                  <div className="flex flex-col items-center mx-2">
+                    <span className="text-lg font-bold">{timeLeft.seconds}</span>
+                    <span className="text-xs">Seconds</span>
+                  </div>
                 </div>
               </div>
             </div>
